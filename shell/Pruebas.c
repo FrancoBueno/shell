@@ -1,0 +1,16 @@
+#include <unistd.h>
+#include <stdio.h>
+
+void prompt(int n)
+{
+  char buffer[201];
+  int i;
+
+  if(n)
+    {
+      getcwd(buffer, 220);
+      for(i = 0; buffer[i]; i++);
+      write(1, buffer, i);
+      write(1, "$", 2);
+    }  
+}
